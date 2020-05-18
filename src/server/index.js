@@ -47,6 +47,16 @@ app.get('/test', function (req, res) {
     res.json(mockAPIResponse);
 })
 
+app.get('/api', function (req, res){
+    textapi.sentiment({
+        'text': 'John is a very good football player!'
+      }, function(error, response) {
+        if (error === null) {
+          console.log(response);
+        }
+      });
+})
+
 // designates what port the app will listen to for incoming requests
 app.listen(8081, function () {
     console.log('app listening on port 8081!')
