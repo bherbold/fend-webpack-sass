@@ -1,8 +1,18 @@
+function validInput(name){
+
+    if (name !== ""){
+        return name;
+    }else{
+        alert("Please enter Input");
+        return null;
+    }
+}
+
 async function handleSubmit(event) {
     event.preventDefault()
 
     // check what text was put into the form field
-    let formText = document.getElementById('name').value
+    let formText = validInput(document.getElementById('name').value);
 
     Client.checkForName(formText)
 
@@ -24,4 +34,5 @@ async function handleSubmit(event) {
     }).catch(err => console.log(err))
 }
 
-export { handleSubmit }
+export { handleSubmit,validInput }
+//module.exports = validInput;

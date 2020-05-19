@@ -1,3 +1,5 @@
-const sum = require('../js/formHandler');
+const validInput = require('../js/formHandler');
 
-test('')
+test('empty string should be invalid and through alert', ()=>{
+    expect(validInput("")).toBe(null);
+});
