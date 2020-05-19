@@ -24,7 +24,7 @@ var json = {
     'time': 'now'
 }
 
-projectData = {};
+var projectData = {};
 
 const app = express()
 app.use(cors())
@@ -47,15 +47,25 @@ app.get('/test', function (req, res) {
     res.json(mockAPIResponse);
 })
 
-app.get('/api', function (req, res){
-    textapi.sentiment({
-        'text': 'John is a very good football player!'
-      }, function(error, response) {
-        if (error === null) {
-          console.log(response);
+//POST
+app.post('/api', async (req, res) => {
+    const { formText } = req.body;
+    console.log(formText);
+    
+    try {
+        console.log("Request NLP-API");
+        textapi.sentiment({'text':formText }, 
+          function(error, response) {
+          if (error === null) {
+            console.log(response);
+            res.send(response);
         }
       });
-})
+      
+    } catch(error) {
+      console.log(error);
+    }
+  })
 
 // designates what port the app will listen to for incoming requests
 app.listen(8081, function () {
