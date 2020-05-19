@@ -1,5 +1,9 @@
+@import 'src/client/styles/variables.scss';
+
 header {
+    color: white;
     display: flex;
     justify-content: space-between;
     padding: 10px 40px;
+    background: #252525;
 }
