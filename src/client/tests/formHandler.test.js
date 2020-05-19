@@ -1,4 +1,4 @@
-const validInput = require('../js/formHandler');
+const {validInput} = require('../js/formHandler');
 
 /*test('empty string should be invalid and through alert', ()=>{
     expect(validInput("")).toBe(null);
@@ -7,6 +7,6 @@ const validInput = require('../js/formHandler');
 describe("invalid empty string", () => {
     window.alert = jest.fn();
     it("Input should be invalid", () => {
-        expect(validInput.validInput("")).toBe(null)
+        expect(validInput("")).toBe(null)
     })
 })
