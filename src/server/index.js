@@ -2,7 +2,6 @@
 //for envirment , API private key should not be on github
 const dotenv = require('dotenv');
 dotenv.config();
-console.log(`Your API key is ${process.env.API_KEY}`);
 
 var path = require('path')
 const express = require('express')
@@ -17,15 +16,6 @@ var textapi = new aylien({
     application_key: process.env.API_KEY
   })
 
-
-var json = {
-    'title': 'test json response',
-    'message': 'this is a message',
-    'time': 'now'
-}
-
-var projectData = {};
-
 const app = express()
 app.use(cors())
 // to use json
@@ -36,8 +26,6 @@ app.use(bodyParser.urlencoded({
 }))
 
 app.use(express.static('dist'))
-
-console.log(JSON.stringify(mockAPIResponse))
 
 app.get('/', function (req, res) {
     res.sendFile('dist/index.html')
