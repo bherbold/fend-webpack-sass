@@ -35,4 +35,3 @@ async function handleSubmit(event) {
 }
 
 export { handleSubmit,validInput }
-//module.exports = validInput;
