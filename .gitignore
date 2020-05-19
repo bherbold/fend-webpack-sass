@@ -1,4 +1,3 @@
 dist
 node_modules
-process.env.API_KEY
-process.env.API_ID
+.env
