@@ -1,9 +1,9 @@
 @import 'src/client/styles/variables.scss';
 
 header {
-    color: white;
+    color: black;
     display: flex;
     justify-content: space-between;
     padding: 10px 40px;
-    background: #252525;
+    background: $primary-color;
 }
