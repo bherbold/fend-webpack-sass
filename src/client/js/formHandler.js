@@ -1,16 +1,3 @@
-/* Function to GET Project Data */
-const getEntry = async ( url = '')=>{
-
-    const response = await fetch(url);
-    try {
-        //const allData = await response.json();
-        console.log(response.json());
-
-    }catch(error) {
-    console.log("error", error);
-    }
-}
-
 async function handleSubmit(event) {
     event.preventDefault()
 
@@ -20,10 +7,6 @@ async function handleSubmit(event) {
     Client.checkForName(formText)
 
     console.log("::: Form Submitted :::")
-
-
-
-    //getEntry('http://localhost:8081/api');
 
     await fetch('http://localhost:8081/api',
     {   method: 'POST',
